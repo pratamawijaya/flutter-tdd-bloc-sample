@@ -98,6 +98,17 @@ void main() {
       verify(mockLocalDataSource.getLastNumberTrivia());
       expect(result, equals(Right(tNumberTrivia)));
     });
+
+    test('should return CacheFailure when no cached data present', () async {
+      when(mockLocalDataSource.getLastNumberTrivia())
+          .thenThrow(CacheException());
+
+      final result = await repository.getConcreteNumberTrivia(tNumber);
+
+      verifyZeroInteractions(mockRemoteDataSource);
+      verify(mockLocalDataSource.getLastNumberTrivia());
+      expect(result, equals(Left(CacheFailure())));
+    });
   });
 
   group('getConcreteNumberTrivia', () {
