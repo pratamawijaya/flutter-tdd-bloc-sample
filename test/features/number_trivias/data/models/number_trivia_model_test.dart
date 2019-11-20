@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter_clean_arch_tdd_bloc/features/number_trivias/data/models/number_trivia_model.dart';
 import 'package:flutter_clean_arch_tdd_bloc/features/number_trivias/domain/entities/number_trivia.dart';
@@ -15,7 +16,10 @@ void main() {
 
   group('from json', () {
     test('should return valid json when number is an integer', () async {
-      final Map<String, dynamic> jsonMap = json.decode(fixture('trivia.json'));
+      final String jsonFile =
+          await File(testPath('fixtures/trivia.json')).readAsString();
+
+      final Map<String, dynamic> jsonMap = json.decode(jsonFile);
 
       final result = NumberTriviaModel.fromJson(jsonMap);
 
@@ -23,8 +27,10 @@ void main() {
     });
 
     test('should return valid json when number is an double', () async {
-      final Map<String, dynamic> jsonMap =
-          json.decode(fixture('trivia_double.json'));
+      final String jsonFile =
+          await File(testPath('fixtures/trivia_double.json')).readAsString();
+
+      final Map<String, dynamic> jsonMap = json.decode(jsonFile);
 
       final result = NumberTriviaModel.fromJson(jsonMap);
 
