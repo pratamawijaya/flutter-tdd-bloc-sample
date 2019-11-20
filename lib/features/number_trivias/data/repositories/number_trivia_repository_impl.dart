@@ -22,13 +22,18 @@ class NumberTriviaRepositoryImpl implements NumberTriviaRepository {
   Future<Either<Failure, NumberTrivia>> getConcreteNumberTrivia(
       int number) async {
     networkInfo.isConnected;
-    try {
-      final remoteTrivia =
-          await remoteDatasource.getConcreteNumberTrivia(number);
-      localDataSource.cachedNumberTrivia(remoteTrivia);
-      return Right(remoteTrivia);
-    } on ServerException {
-      return Left(ServerFailure());
+    if (await networkInfo.isConnected) {
+      try {
+        final remoteTrivia =
+            await remoteDatasource.getConcreteNumberTrivia(number);
+        localDataSource.cachedNumberTrivia(remoteTrivia);
+        return Right(remoteTrivia);
+      } on ServerException {
+        return Left(ServerFailure());
+      }
+    } else {
+      final localTrivia = await localDataSource.getLastNumberTrivia();
+      return Right(localTrivia);
     }
   }
 
