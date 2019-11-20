@@ -31,13 +31,13 @@
             <td class="headerValue">lcov.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">3</td>
-            <td class="headerCovTableEntry">3</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntryLo">66.7 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2019-11-20 07:37:47</td>
+            <td class="headerValue">2019-11-20 09:09:40</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
@@ -61,22 +61,32 @@
 <pre class="sourceHeading">          Line data    Source code</pre>
 <pre class="source">
 <a name="1"><span class="lineNum">       1 </span>            : import 'package:dartz/dartz.dart';</a>
-<span class="lineNum">       2 </span>            : import 'package:flutter/cupertino.dart';
-<span class="lineNum">       3 </span>            : import 'package:flutter_clean_arch_tdd_bloc/core/error/Failure.dart';
-<span class="lineNum">       4 </span>            : import 'package:flutter_clean_arch_tdd_bloc/features/number_trivias/domain/entities/number_trivia.dart';
-<span class="lineNum">       5 </span>            : import 'package:flutter_clean_arch_tdd_bloc/features/number_trivias/domain/repositories/number_trivia_repository.dart';
-<span class="lineNum">       6 </span>            : 
-<span class="lineNum">       7 </span>            : class GetConcreteNumberTrivia {
-<span class="lineNum">       8 </span>            :   final NumberTriviaRepository repository;
-<span class="lineNum">       9 </span>            : 
-<span class="lineNum">      10 </span><span class="lineCov">          1 :   GetConcreteNumberTrivia(this.repository);</span>
+<span class="lineNum">       2 </span>            : import 'package:equatable/equatable.dart';
+<span class="lineNum">       3 </span>            : import 'package:flutter/cupertino.dart';
+<span class="lineNum">       4 </span>            : import 'package:flutter_clean_arch_tdd_bloc/core/error/Failure.dart';
+<span class="lineNum">       5 </span>            : import 'package:flutter_clean_arch_tdd_bloc/core/usecase/usecase.dart';
+<span class="lineNum">       6 </span>            : import 'package:flutter_clean_arch_tdd_bloc/features/number_trivias/domain/entities/number_trivia.dart';
+<span class="lineNum">       7 </span>            : import 'package:flutter_clean_arch_tdd_bloc/features/number_trivias/domain/repositories/number_trivia_repository.dart';
+<span class="lineNum">       8 </span>            : 
+<span class="lineNum">       9 </span>            : class GetConcreteNumberTrivia extends UseCase&lt;NumberTrivia, Params&gt; {
+<span class="lineNum">      10 </span>            :   final NumberTriviaRepository repository;
 <span class="lineNum">      11 </span>            : 
-<span class="lineNum">      12 </span><span class="lineCov">          1 :   Future&lt;Either&lt;Failure, NumberTrivia&gt;&gt; execute({</span>
-<span class="lineNum">      13 </span>            :     @required int number,
-<span class="lineNum">      14 </span>            :   }) async {
-<span class="lineNum">      15 </span><span class="lineCov">          3 :     return await repository.getConcreteNumberTrivia(number);</span>
-<span class="lineNum">      16 </span>            :   }
-<span class="lineNum">      17 </span>            : }
+<span class="lineNum">      12 </span><span class="lineCov">          1 :   GetConcreteNumberTrivia(this.repository);</span>
+<span class="lineNum">      13 </span>            : 
+<span class="lineNum">      14 </span>            :   @override
+<span class="lineNum">      15 </span><span class="lineCov">          1 :   Future&lt;Either&lt;Failure, NumberTrivia&gt;&gt; call(Params params) async {</span>
+<span class="lineNum">      16 </span><span class="lineCov">          4 :     return await repository.getConcreteNumberTrivia(params.number);</span>
+<span class="lineNum">      17 </span>            :   }
+<span class="lineNum">      18 </span>            : }
+<span class="lineNum">      19 </span>            : 
+<span class="lineNum">      20 </span>            : class Params extends Equatable {
+<span class="lineNum">      21 </span>            :   final int number;
+<span class="lineNum">      22 </span>            : 
+<span class="lineNum">      23 </span><span class="lineCov">          1 :   Params({@required this.number});</span>
+<span class="lineNum">      24 </span>            : 
+<span class="lineNum">      25 </span><span class="lineNoCov">          0 :   @override</span>
+<span class="lineNum">      26 </span><span class="lineNoCov">          0 :   List&lt;Object&gt; get props =&gt; [number];</span>
+<span class="lineNum">      27 </span>            : }
 </pre>
       </td>
     </tr>

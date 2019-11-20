@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - lcov.info - lib/features/number_trivias/domain/entities/number_trivia.dart</title>
+  <title>LCOV - lcov.info - lib/features/number_trivias/data/models/number_trivia_model.dart</title>
   <link rel="stylesheet" type="text/css" href="../../../../../gcov.css">
 </head>
 
@@ -19,7 +19,7 @@
         <table cellpadding=1 border=0 width="100%">
           <tr>
             <td width="10%" class="headerItem">Current view:</td>
-            <td width="35%" class="headerValue"><a href="../../../../../index.html">top level</a> - <a href="index.html">lib/features/number_trivias/domain/entities</a> - number_trivia.dart<span style="font-size: 80%;"> (source / <a href="number_trivia.dart.func-sort-c.html">functions</a>)</span></td>
+            <td width="35%" class="headerValue"><a href="../../../../../index.html">top level</a> - <a href="index.html">lib/features/number_trivias/data/models</a> - number_trivia_model.dart<span style="font-size: 80%;"> (source / <a href="number_trivia_model.dart.func-sort-c.html">functions</a>)</span></td>
             <td width="5%"></td>
             <td width="15%"></td>
             <td width="10%" class="headerCovTableHead">Hit</td>
@@ -31,8 +31,8 @@
             <td class="headerValue">lcov.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">3</td>
-            <td class="headerCovTableEntry">3</td>
+            <td class="headerCovTableEntry">7</td>
+            <td class="headerCovTableEntry">7</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
@@ -60,18 +60,22 @@
       <td>
 <pre class="sourceHeading">          Line data    Source code</pre>
 <pre class="source">
-<a name="1"><span class="lineNum">       1 </span>            : import 'package:equatable/equatable.dart';</a>
-<span class="lineNum">       2 </span>            : import 'package:flutter/material.dart';
+<a name="1"><span class="lineNum">       1 </span>            : import 'package:flutter/cupertino.dart';</a>
+<span class="lineNum">       2 </span>            : import 'package:flutter_clean_arch_tdd_bloc/features/number_trivias/domain/entities/number_trivia.dart';
 <span class="lineNum">       3 </span>            : 
-<span class="lineNum">       4 </span>            : class NumberTrivia extends Equatable {
-<span class="lineNum">       5 </span>            :   final String text;
-<span class="lineNum">       6 </span>            :   final int number;
+<span class="lineNum">       4 </span>            : class NumberTriviaModel extends NumberTrivia {
+<span class="lineNum">       5 </span><span class="lineCov">          1 :   NumberTriviaModel({@required String text, @required int number})</span>
+<span class="lineNum">       6 </span><span class="lineCov">          1 :       : super(text: text, number: number);</span>
 <span class="lineNum">       7 </span>            : 
-<span class="lineNum">       8 </span><span class="lineCov">          3 :   NumberTrivia({@required this.text, @required this.number});</span>
-<span class="lineNum">       9 </span>            : 
-<span class="lineNum">      10 </span><span class="lineCov">          1 :   @override</span>
-<span class="lineNum">      11 </span><span class="lineCov">          3 :   List&lt;Object&gt; get props =&gt; [text, number];</span>
-<span class="lineNum">      12 </span>            : }
+<span class="lineNum">       8 </span><span class="lineCov">          1 :   factory NumberTriviaModel.fromJson(Map&lt;String, dynamic&gt; json) {</span>
+<span class="lineNum">       9 </span><span class="lineCov">          1 :     return NumberTriviaModel(</span>
+<span class="lineNum">      10 </span><span class="lineCov">          3 :         text: json['text'], number: (json['number'] as num).toInt());</span>
+<span class="lineNum">      11 </span>            :   }
+<span class="lineNum">      12 </span>            : 
+<span class="lineNum">      13 </span><span class="lineCov">          1 :   Map&lt;String, dynamic&gt; toJson() {</span>
+<span class="lineNum">      14 </span><span class="lineCov">          3 :     return {'text': text, 'number': number};</span>
+<span class="lineNum">      15 </span>            :   }
+<span class="lineNum">      16 </span>            : }
 </pre>
       </td>
     </tr>
