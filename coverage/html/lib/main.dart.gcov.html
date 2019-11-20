@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - lcov.info - lib/main.dart</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">lib</a> - main.dart<span style="font-size: 80%;"> (source / <a href="main.dart.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">lcov.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">24</td>
+            <td class="headerCovTableEntry">25</td>
+            <td class="headerCovTableEntryHi">96.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2019-11-20 07:37:47</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntryHi">-</td>
+          </tr>
+          <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : import 'package:flutter/material.dart';</a>
+<span class="lineNum">       2 </span>            : 
+<span class="lineNum">       3 </span><span class="lineNoCov">          0 : void main() =&gt; runApp(MyApp());</span>
+<span class="lineNum">       4 </span>            : 
+<span class="lineNum">       5 </span>            : class MyApp extends StatelessWidget {
+<span class="lineNum">       6 </span>            :   // This widget is the root of your application.
+<span class="lineNum">       7 </span><span class="lineCov">          1 :   @override</span>
+<span class="lineNum">       8 </span>            :   Widget build(BuildContext context) {
+<span class="lineNum">       9 </span><span class="lineCov">          1 :     return MaterialApp(</span>
+<span class="lineNum">      10 </span>            :       title: 'Flutter Demo',
+<span class="lineNum">      11 </span><span class="lineCov">          1 :       theme: ThemeData(</span>
+<span class="lineNum">      12 </span>            :         primarySwatch: Colors.blue,
+<span class="lineNum">      13 </span>            :       ),
+<span class="lineNum">      14 </span><span class="lineCov">          1 :       home: MyHomePage(title: 'Flutter Demo Home Page'),</span>
+<span class="lineNum">      15 </span>            :     );
+<span class="lineNum">      16 </span>            :   }
+<span class="lineNum">      17 </span>            : }
+<span class="lineNum">      18 </span>            : 
+<span class="lineNum">      19 </span>            : class MyHomePage extends StatefulWidget {
+<span class="lineNum">      20 </span><span class="lineCov">          2 :   MyHomePage({Key key, this.title}) : super(key: key);</span>
+<span class="lineNum">      21 </span>            : 
+<span class="lineNum">      22 </span>            :   final String title;
+<span class="lineNum">      23 </span>            : 
+<span class="lineNum">      24 </span><span class="lineCov">          1 :   @override</span>
+<span class="lineNum">      25 </span><span class="lineCov">          1 :   _MyHomePageState createState() =&gt; _MyHomePageState();</span>
+<span class="lineNum">      26 </span>            : }
+<span class="lineNum">      27 </span>            : 
+<span class="lineNum">      28 </span>            : class _MyHomePageState extends State&lt;MyHomePage&gt; {
+<span class="lineNum">      29 </span>            :   int _counter = 0;
+<span class="lineNum">      30 </span>            : 
+<span class="lineNum">      31 </span><span class="lineCov">          1 :   void _incrementCounter() {</span>
+<span class="lineNum">      32 </span><span class="lineCov">          2 :     setState(() {</span>
+<span class="lineNum">      33 </span><span class="lineCov">          2 :       _counter++;</span>
+<span class="lineNum">      34 </span>            :     });
+<span class="lineNum">      35 </span>            :   }
+<span class="lineNum">      36 </span>            : 
+<span class="lineNum">      37 </span><span class="lineCov">          1 :   @override</span>
+<span class="lineNum">      38 </span>            :   Widget build(BuildContext context) {
+<span class="lineNum">      39 </span><span class="lineCov">          1 :     return Scaffold(</span>
+<span class="lineNum">      40 </span><span class="lineCov">          1 :       appBar: AppBar(</span>
+<span class="lineNum">      41 </span><span class="lineCov">          3 :         title: Text(widget.title),</span>
+<span class="lineNum">      42 </span>            :       ),
+<span class="lineNum">      43 </span><span class="lineCov">          1 :       body: Center(</span>
+<span class="lineNum">      44 </span><span class="lineCov">          1 :         child: Column(</span>
+<span class="lineNum">      45 </span>            :           mainAxisAlignment: MainAxisAlignment.center,
+<span class="lineNum">      46 </span><span class="lineCov">          1 :           children: &lt;Widget&gt;[</span>
+<span class="lineNum">      47 </span><span class="lineCov">          1 :             Text(</span>
+<span class="lineNum">      48 </span>            :               'You have pushed the button this many times:',
+<span class="lineNum">      49 </span>            :             ),
+<span class="lineNum">      50 </span><span class="lineCov">          1 :             Text(</span>
+<span class="lineNum">      51 </span><span class="lineCov">          2 :               '$_counter',</span>
+<span class="lineNum">      52 </span><span class="lineCov">          3 :               style: Theme.of(context).textTheme.display1,</span>
+<span class="lineNum">      53 </span>            :             ),
+<span class="lineNum">      54 </span>            :           ],
+<span class="lineNum">      55 </span>            :         ),
+<span class="lineNum">      56 </span>            :       ),
+<span class="lineNum">      57 </span><span class="lineCov">          1 :       floatingActionButton: FloatingActionButton(</span>
+<span class="lineNum">      58 </span><span class="lineCov">          1 :         onPressed: _incrementCounter,</span>
+<span class="lineNum">      59 </span>            :         tooltip: 'Increment',
+<span class="lineNum">      60 </span><span class="lineCov">          1 :         child: Icon(Icons.add),</span>
+<span class="lineNum">      61 </span>            :       ), // This trailing comma makes auto-formatting nicer for build methods.
+<span class="lineNum">      62 </span>            :     );
+<span class="lineNum">      63 </span>            :   }
+<span class="lineNum">      64 </span>            : }
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>
