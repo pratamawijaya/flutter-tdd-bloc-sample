@@ -9,4 +9,8 @@ class NumberTriviaModel extends NumberTrivia {
     return NumberTriviaModel(
         text: json['text'], number: (json['number'] as num).toInt());
   }
+
+  Map<String, dynamic> toJson() {
+    return {'text': text, 'number': number};
+  }
 }
