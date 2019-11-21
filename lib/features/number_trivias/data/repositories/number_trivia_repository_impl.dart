@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_clean_arch_tdd_bloc/core/error/Failure.dart';
 import 'package:flutter_clean_arch_tdd_bloc/core/error/exception.dart';
-import 'package:flutter_clean_arch_tdd_bloc/core/platform/network_info.dart';
+import 'package:flutter_clean_arch_tdd_bloc/core/network/network_info.dart';
 import 'package:flutter_clean_arch_tdd_bloc/features/number_trivias/data/datasources/local/number_trivia_local_datasource.dart';
 import 'package:flutter_clean_arch_tdd_bloc/features/number_trivias/data/datasources/remote/number_trivia_remote_datasource.dart';
 import 'package:flutter_clean_arch_tdd_bloc/features/number_trivias/domain/entities/number_trivia.dart';
